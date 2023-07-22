@@ -90,7 +90,7 @@ int main(int argv, char** argc) {
 	preprocess(file_name);
 
 	// choose which case the program are facing
-	if (B.size() > 4096000) {
+	if (B.size() > 102400) {
 		BLOCK_SIZE = BLOCK_SIZE * 8;
 		CHAR_BLOCK_SIZE = 20480;
 		BIT_BLOCK_SIZE_OF_UINT *= 8;
