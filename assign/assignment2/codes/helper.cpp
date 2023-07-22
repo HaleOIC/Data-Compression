@@ -1,6 +1,6 @@
 #include "helper.h"
 
-
+/** some implementation of helper function**/
 
 void output_S_sequence() {
 	int tot = 0;

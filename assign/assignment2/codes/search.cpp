@@ -4,6 +4,18 @@
 
 map<int, string> filt_map;
 
+/**
+ * search the target string by using the backward search
+ * for confirming the concrete range
+ * then generate the string one by one
+ * filter the duplicated string by using the map.
+ * 
+ * parameter:
+ * 		tar: the demanding string
+ * 
+ * return:
+ * 		None;
+ */
 void search_str(const string& tar) {
 	auto rv = backward_search(tar);
 	int range_left = rv.first, range_right = rv.second;
@@ -24,6 +36,15 @@ void search_str(const string& tar) {
 	}
 }
 
+/**
+ * find the index(offset) of record by giving the start pos
+ * 
+ * parameter:
+ * 		pos: the start position to find
+ * 
+ * return:
+ * 		the index of record.
+ */
 int find_index_record(int pos) {
 	string rv = "";
 	int cnt = 0;
@@ -54,6 +75,15 @@ int find_index_record(int pos) {
 	return val;
 }
 
+/**
+ * return the match new string by using the index
+ * 
+ * parameter:
+ * 		idx: the demanding index
+ * 
+ * return:
+ * 		string: the corresponding string of index
+ */
 string match_new_str(int idx) {
 	int tar_num = idx + 1, pos = 0;
 	while (true) {
@@ -87,15 +117,34 @@ string match_new_str(int idx) {
 
 
 
-// reverse the BWT or in order to have LF[col]
+/**
+ * reverse the BWT or in order to calculate LF[col]
+ * 
+ * parameter:
+ * 		col: the corresponding value of formula
+ * 
+ * return:
+ * 		int: the value of LF[col]
+ */
 int reverse_BWT(unsigned int col) {
 	char cur_char = get_Li(col);
 	return selectB_pr(CS_table[int(cur_char)] + rankS(cur_char, rankB(col)))
 			+ col - selectB(rankB(col));
 }
-
-
-
+/**
+ * 
+ * the main or even core of the algorithm:
+ * 1. confirm the initial fst and lst
+ * 2. calculate the corresponding value of fst and lst because of the 
+ * 	  relation between Li[i] and cur_char
+ * 3. return back the lst and fst 
+ * 
+ * parameter:
+ * 		str: the searched string
+ * 
+ * return:
+ * 		pair<int, int>: the first is fst and the second is lst.
+ */
 pair<int, int> backward_search(const string& str) {
 	// init the search condition
 	int pos = str.size() - 1;

@@ -113,12 +113,12 @@ void preprocess(const string& filename) {
 void generete_related_sequence() {
 	// init the select and rank variables in the file.
 	for (int i = 0; i < CHARWIDTH; i++) {
+		select_S.push_back(0);
 		CS_table[i] = 0;
 		Length_table[i] = 0;
-		select_S.push_back(0);
 	}
-	rank_B.push_back(0);
 	rank_B_pr.push_back(0);
+	rank_B.push_back(0);
 
 	// generate rank_b for selectB and rankB
 	// and b_count means the count of 1s in B
