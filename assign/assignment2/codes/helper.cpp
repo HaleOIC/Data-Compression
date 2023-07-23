@@ -13,7 +13,7 @@ void output_S_sequence() {
 void output_B_sequence() {
 	int fre = 0;
 	for (auto each : B) {
-		printf("%b ", each);
+		printf("%x ", each);
 		fre++;
 		if (fre == 2) {
 			cout << endl;

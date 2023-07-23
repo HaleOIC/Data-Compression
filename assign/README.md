@@ -4,6 +4,8 @@ There are two assignments in this semester, one is trival while the other one is
 
 ### Assignment 1
 
+**Keypoint**: LZW encode and decode.
+
 
 ### Assignment 2
 
