@@ -16,3 +16,4 @@ this folder just contains some interesting and useful program for the whole cour
 - [ ] Run-Length encode
 - [ ] Run-Length-FM-index
 - [ ] Linear-SA
+
